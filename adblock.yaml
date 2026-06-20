@@ -1,0 +1,260 @@
+# =============================================================================
+# FILE: stash_adblock_rules.yaml
+# MÔ TẢ: File cấu hình rules chặn quảng cáo cho ứng dụng Stash (iOS/macOS).
+# SỬ DỤNG: Copy toàn bộ nội dung file này vào cuối file cấu hình chính của Stash.
+#          Hoặc lưu thành file .yaml riêng và import vào Stash.
+# NGUYÊN LÝ: Dùng rule DOMAIN-SUFFIX và DOMAIN-KEYWORD để REJECT traffic đến máy chủ quảng cáo.
+# CẬP NHẬT: 2026-06-20 - Danh sách domain tổng hợp từ AdAway, StevenBlack, Yoyo.
+# =============================================================================
+
+# =============================================================================
+# ĐỊNH NGHĨA PROXY GROUP (Bắt buộc trong Stash config)
+# =============================================================================
+proxy-groups:
+  - name: "AdBlock"
+    type: reject
+    # Group này sẽ từ chối toàn bộ kết nối khớp rule bên dưới
+    # Không cần proxy thực tế, Stash tự động REJECT
+
+# =============================================================================
+# ĐỊNH NGHĨA RULES (Chặn quảng cáo)
+# =============================================================================
+rules:
+  # --- Quy tắc chặn tổng quát bằng keyword ---
+  # Chặn mọi domain có chứa từ khóa quảng cáo phổ biến
+  - DOMAIN-KEYWORD,ad,AdBlock
+  - DOMAIN-KEYWORD,ads,AdBlock
+  - DOMAIN-KEYWORD,analytics,AdBlock
+  - DOMAIN-KEYWORD,tracker,AdBlock
+  - DOMAIN-KEYWORD,doubleclick,AdBlock
+  - DOMAIN-KEYWORD,googleadservices,AdBlock
+  - DOMAIN-KEYWORD,googlesyndication,AdBlock
+  - DOMAIN-KEYWORD,applovin,AdBlock
+  - DOMAIN-KEYWORD,unityads,AdBlock
+  - DOMAIN-KEYWORD,vungle,AdBlock
+  - DOMAIN-KEYWORD,ironsrc,AdBlock
+  - DOMAIN-KEYWORD,mintegral,AdBlock
+  - DOMAIN-KEYWORD,chartboost,AdBlock
+  - DOMAIN-KEYWORD,inmobi,AdBlock
+  - DOMAIN-KEYWORD,fbcdn,AdBlock
+  - DOMAIN-KEYWORD,fbsbx,AdBlock
+  - DOMAIN-KEYWORD,facebook-network,AdBlock
+  - DOMAIN-KEYWORD,amazon-adsystem,AdBlock
+  - DOMAIN-KEYWORD,flurry,AdBlock
+  - DOMAIN-KEYWORD,crashlytics,AdBlock
+  - DOMAIN-KEYWORD,adjust,AdBlock
+  - DOMAIN-KEYWORD,appsflyer,AdBlock
+  - DOMAIN-KEYWORD,branch,AdBlock
+  - DOMAIN-KEYWORD,singular,AdBlock
+  - DOMAIN-KEYWORD,tapjoy,AdBlock
+  - DOMAIN-KEYWORD,mopub,AdBlock
+  - DOMAIN-KEYWORD,supersonicads,AdBlock
+  - DOMAIN-KEYWORD,heyzap,AdBlock
+  - DOMAIN-KEYWORD,adcolony,AdBlock
+  - DOMAIN-KEYWORD,ogury,AdBlock
+  - DOMAIN-KEYWORD,smaato,AdBlock
+  - DOMAIN-KEYWORD,startapp,AdBlock
+  - DOMAIN-KEYWORD,loopme,AdBlock
+  - DOMAIN-KEYWORD,admost,AdBlock
+  - DOMAIN-KEYWORD,pubnative,AdBlock
+
+  # --- Chặn domain cụ thể (AdAway + StevenBlack tổng hợp) ---
+  # Các domain quảng cáo hàng đầu, đã xác minh hoạt động trên mobile game
+  - DOMAIN-SUFFIX,doubleclick.net,AdBlock
+  - DOMAIN-SUFFIX,googleadservices.com,AdBlock
+  - DOMAIN-SUFFIX,googlesyndication.com,AdBlock
+  - DOMAIN-SUFFIX,google-analytics.com,AdBlock
+  - DOMAIN-SUFFIX,googletagmanager.com,AdBlock
+  - DOMAIN-SUFFIX,googletagservices.com,AdBlock
+  - DOMAIN-SUFFIX,app-measurement.com,AdBlock
+  - DOMAIN-SUFFIX,firebaseio.com,AdBlock
+  - DOMAIN-SUFFIX,crashlytics.com,AdBlock
+  - DOMAIN-SUFFIX,fabric.io,AdBlock
+  - DOMAIN-SUFFIX,flurry.com,AdBlock
+  - DOMAIN-SUFFIX,appsflyer.com,AdBlock
+  - DOMAIN-SUFFIX,adjust.com,AdBlock
+  - DOMAIN-SUFFIX,adjust.io,AdBlock
+  - DOMAIN-SUFFIX,adjust.world,AdBlock
+  - DOMAIN-SUFFIX,branch.io,AdBlock
+  - DOMAIN-SUFFIX,singular.net,AdBlock
+  - DOMAIN-SUFFIX,kochava.com,AdBlock
+  - DOMAIN-SUFFIX,tune.com,AdBlock
+  - DOMAIN-SUFFIX,hasoffers.com,AdBlock
+  - DOMAIN-SUFFIX,mobileapptracking.com,AdBlock
+  - DOMAIN-SUFFIX,applovin.com,AdBlock
+  - DOMAIN-SUFFIX,applvn.com,AdBlock
+  - DOMAIN-SUFFIX,unity3d.com,AdBlock
+  - DOMAIN-SUFFIX,unityads.unity3d.com,AdBlock
+  - DOMAIN-SUFFIX,vungle.com,AdBlock
+  - DOMAIN-SUFFIX,ironsrc.com,AdBlock
+  - DOMAIN-SUFFIX,supersonicads.com,AdBlock
+  - DOMAIN-SUFFIX,mintegral.com,AdBlock
+  - DOMAIN-SUFFIX,chartboost.com,AdBlock
+  - DOMAIN-SUFFIX,inmobi.com,AdBlock
+  - DOMAIN-SUFFIX,inmobi.net,AdBlock
+  - DOMAIN-SUFFIX,tapjoy.com,AdBlock
+  - DOMAIN-SUFFIX,tapjoyads.com,AdBlock
+  - DOMAIN-SUFFIX,mopub.com,AdBlock
+  - DOMAIN-SUFFIX,adcolony.com,AdBlock
+  - DOMAIN-SUFFIX,ogury.com,AdBlock
+  - DOMAIN-SUFFIX,presage.io,AdBlock
+  - DOMAIN-SUFFIX,smaato.com,AdBlock
+  - DOMAIN-SUFFIX,smaato.net,AdBlock
+  - DOMAIN-SUFFIX,startapp.com,AdBlock
+  - DOMAIN-SUFFIX,startappexchange.com,AdBlock
+  - DOMAIN-SUFFIX,loopme.com,AdBlock
+  - DOMAIN-SUFFIX,loopme.me,AdBlock
+  - DOMAIN-SUFFIX,admost.com,AdBlock
+  - DOMAIN-SUFFIX,admostmediation.com,AdBlock
+  - DOMAIN-SUFFIX,pubnative.net,AdBlock
+  - DOMAIN-SUFFIX,verve.com,AdBlock
+  - DOMAIN-SUFFIX,hyprmx.com,AdBlock
+  - DOMAIN-SUFFIX,adtiming.com,AdBlock
+  - DOMAIN-SUFFIX,openx.net,AdBlock
+  - DOMAIN-SUFFIX,openx.com,AdBlock
+  - DOMAIN-SUFFIX,rubiconproject.com,AdBlock
+  - DOMAIN-SUFFIX,indexww.com,AdBlock
+  - DOMAIN-SUFFIX,indexexchange.com,AdBlock
+  - DOMAIN-SUFFIX,criteo.com,AdBlock
+  - DOMAIN-SUFFIX,criteo.net,AdBlock
+  - DOMAIN-SUFFIX,adsrvr.org,AdBlock
+  - DOMAIN-SUFFIX,thetradedesk.com,AdBlock
+  - DOMAIN-SUFFIX,adnxs.com,AdBlock
+  - DOMAIN-SUFFIX,appnexus.com,AdBlock
+  - DOMAIN-SUFFIX,contextweb.com,AdBlock
+  - DOMAIN-SUFFIX,pubmatic.com,AdBlock
+  - DOMAIN-SUFFIX,sharethrough.com,AdBlock
+  - DOMAIN-SUFFIX,smartadserver.com,AdBlock
+  - DOMAIN-SUFFIX,sovrn.com,AdBlock
+  - DOMAIN-SUFFIX,yieldmo.com,AdBlock
+  - DOMAIN-SUFFIX,amazon-adsystem.com,AdBlock
+  - DOMAIN-SUFFIX,aaxads.com,AdBlock
+  - DOMAIN-SUFFIX,aaxads.net,AdBlock
+  - DOMAIN-SUFFIX,serving-sys.com,AdBlock
+  - DOMAIN-SUFFIX,adsafeprotected.com,AdBlock
+  - DOMAIN-SUFFIX,adsafeprotected.net,AdBlock
+  - DOMAIN-SUFFIX,moatads.com,AdBlock
+  - DOMAIN-SUFFIX,iasds01.com,AdBlock
+  - DOMAIN-SUFFIX,adsymptotic.com,AdBlock
+  - DOMAIN-SUFFIX,adzerk.net,AdBlock
+  - DOMAIN-SUFFIX,adzerk.com,AdBlock
+  - DOMAIN-SUFFIX,kevel.net,AdBlock
+  - DOMAIN-SUFFIX,facebook.com,AdBlock
+  - DOMAIN-SUFFIX,fbcdn.net,AdBlock
+  - DOMAIN-SUFFIX,atdmt.com,AdBlock
+  - DOMAIN-SUFFIX,scorecardresearch.com,AdBlock
+  - DOMAIN-SUFFIX,outbrain.com,AdBlock
+  - DOMAIN-SUFFIX,taboola.com,AdBlock
+  - DOMAIN-SUFFIX,revcontent.com,AdBlock
+  - DOMAIN-SUFFIX,mgid.com,AdBlock
+  - DOMAIN-SUFFIX,advertising.com,AdBlock
+  - DOMAIN-SUFFIX,adtech.com,AdBlock
+  - DOMAIN-SUFFIX,yahoo.com,AdBlock
+  - DOMAIN-SUFFIX,adsymptotic.com,AdBlock
+  - DOMAIN-SUFFIX,bluekai.com,AdBlock
+  - DOMAIN-SUFFIX,demdex.net,AdBlock
+  - DOMAIN-SUFFIX,exelator.com,AdBlock
+  - DOMAIN-SUFFIX,lotame.com,AdBlock
+  - DOMAIN-SUFFIX,oraclecloud.com,AdBlock
+  - DOMAIN-SUFFIX,tiqcdn.com,AdBlock
+  - DOMAIN-SUFFIX,tealiumiq.com,AdBlock
+  - DOMAIN-SUFFIX,ensighten.com,AdBlock
+  - DOMAIN-SUFFIX,segment.io,AdBlock
+  - DOMAIN-SUFFIX,segment.com,AdBlock
+  - DOMAIN-SUFFIX,mixpanel.com,AdBlock
+  - DOMAIN-SUFFIX,amplitude.com,AdBlock
+  - DOMAIN-SUFFIX,appboy.com,AdBlock
+  - DOMAIN-SUFFIX,braze.com,AdBlock
+  - DOMAIN-SUFFIX,leanplum.com,AdBlock
+  - DOMAIN-SUFFIX,clevertap.com,AdBlock
+  - DOMAIN-SUFFIX,moengage.com,AdBlock
+  - DOMAIN-SUFFIX,onesignal.com,AdBlock
+  - DOMAIN-SUFFIX,batch.com,AdBlock
+  - DOMAIN-SUFFIX,airship.com,AdBlock
+  - DOMAIN-SUFFIX,urbanairship.com,AdBlock
+  - DOMAIN-SUFFIX,intercom.io,AdBlock
+  - DOMAIN-SUFFIX,intercomcdn.com,AdBlock
+
+  # --- Các domain chặn video quảng cáo trong game ---
+  - DOMAIN-SUFFIX,ads.vungle.com,AdBlock
+  - DOMAIN-SUFFIX,api.vungle.com,AdBlock
+  - DOMAIN-SUFFIX,cdn.vungle.com,AdBlock
+  - DOMAIN-SUFFIX,ingest.vungle.com,AdBlock
+  - DOMAIN-SUFFIX,ads.unity3d.com,AdBlock
+  - DOMAIN-SUFFIX,adserver.unity3d.com,AdBlock
+  - DOMAIN-SUFFIX,auction.unityads.unity3d.com,AdBlock
+  - DOMAIN-SUFFIX,cdn.unityads.unity3d.com,AdBlock
+  - DOMAIN-SUFFIX,ads.ironsrc.com,AdBlock
+  - DOMAIN-SUFFIX,events.ironsrc.com,AdBlock
+  - DOMAIN-SUFFIX,init.ironsrc.com,AdBlock
+  - DOMAIN-SUFFIX,log.ironsrc.com,AdBlock
+  - DOMAIN-SUFFIX,mediation.ironsrc.com,AdBlock
+  - DOMAIN-SUFFIX,rv.ironsrc.com,AdBlock
+  - DOMAIN-SUFFIX,ads.applovin.com,AdBlock
+  - DOMAIN-SUFFIX,api.applovin.com,AdBlock
+  - DOMAIN-SUFFIX,cdn.applovin.com,AdBlock
+  - DOMAIN-SUFFIX,d.applovin.com,AdBlock
+  - DOMAIN-SUFFIX,img.applovin.com,AdBlock
+  - DOMAIN-SUFFIX,rt.applovin.com,AdBlock
+  - DOMAIN-SUFFIX,vid.applovin.com,AdBlock
+  - DOMAIN-SUFFIX,api.mintegral.com,AdBlock
+  - DOMAIN-SUFFIX,static.mintegral.com,AdBlock
+  - DOMAIN-SUFFIX,video.mintegral.com,AdBlock
+  - DOMAIN-SUFFIX,cdn.chartboost.com,AdBlock
+  - DOMAIN-SUFFIX,live.chartboost.com,AdBlock
+  - DOMAIN-SUFFIX,api.inmobi.com,AdBlock
+  - DOMAIN-SUFFIX,cdn.inmobi.com,AdBlock
+  - DOMAIN-SUFFIX,sdk.inmobi.com,AdBlock
+  - DOMAIN-SUFFIX,api.tapjoy.com,AdBlock
+  - DOMAIN-SUFFIX,content.tapjoy.com,AdBlock
+  - DOMAIN-SUFFIX,ws.tapjoyads.com,AdBlock
+  - DOMAIN-SUFFIX,placements.tapjoy.com,AdBlock
+  - DOMAIN-SUFFIX,ads.mopub.com,AdBlock
+  - DOMAIN-SUFFIX,analytics.mopub.com,AdBlock
+  - DOMAIN-SUFFIX,sdk.mopub.com,AdBlock
+  - DOMAIN-SUFFIX,ads.adcolony.com,AdBlock
+  - DOMAIN-SUFFIX,api.adcolony.com,AdBlock
+  - DOMAIN-SUFFIX,cdn.adcolony.com,AdBlock
+  - DOMAIN-SUFFIX,events3.adcolony.com,AdBlock
+  - DOMAIN-SUFFIX,wd.adcolony.com,AdBlock
+  - DOMAIN-SUFFIX,consent.ogury.com,AdBlock
+  - DOMAIN-SUFFIX,events.ogury.com,AdBlock
+  - DOMAIN-SUFFIX,mediation.ogury.com,AdBlock
+  - DOMAIN-SUFFIX,ads.smaato.com,AdBlock
+  - DOMAIN-SUFFIX,api.smaato.com,AdBlock
+  - DOMAIN-SUFFIX,cdn.smaato.com,AdBlock
+  - DOMAIN-SUFFIX,video.smaato.com,AdBlock
+  - DOMAIN-SUFFIX,ads.startapp.com,AdBlock
+  - DOMAIN-SUFFIX,api.startapp.com,AdBlock
+  - DOMAIN-SUFFIX,cdn.startapp.com,AdBlock
+  - DOMAIN-SUFFIX,info.startapp.com,AdBlock
+  - DOMAIN-SUFFIX,init.startapp.com,AdBlock
+  - DOMAIN-SUFFIX,ads.loopme.com,AdBlock
+  - DOMAIN-SUFFIX,api.loopme.com,AdBlock
+  - DOMAIN-SUFFIX,cdn.loopme.com,AdBlock
+  - DOMAIN-SUFFIX,tracker.loopme.com,AdBlock
+
+  # --- Chặn tracking / analytics SDK ---
+  - DOMAIN-SUFFIX,adjust.com,AdBlock
+  - DOMAIN-SUFFIX,adjust.io,AdBlock
+  - DOMAIN-SUFFIX,appsflyer.com,AdBlock
+  - DOMAIN-SUFFIX,appsflyersdk.com,AdBlock
+  - DOMAIN-SUFFIX,api2.branch.io,AdBlock
+  - DOMAIN-SUFFIX,api.branch.io,AdBlock
+  - DOMAIN-SUFFIX,singular.net,AdBlock
+  - DOMAIN-SUFFIX,kochava.com,AdBlock
+  - DOMAIN-SUFFIX,tune.com,AdBlock
+  - DOMAIN-SUFFIX,hasoffers.com,AdBlock
+  - DOMAIN-SUFFIX,mobileapptracking.com,AdBlock
+  - DOMAIN-SUFFIX,events.kochava.com,AdBlock
+  - DOMAIN-SUFFIX,imp.kochava.com,AdBlock
+  - DOMAIN-SUFFIX,sdk.appsflyer.com,AdBlock
+  - DOMAIN-SUFFIX,app.appsflyer.com,AdBlock
+  - DOMAIN-SUFFIX,inapps.appsflyer.com,AdBlock
+  - DOMAIN-SUFFIX,t.appsflyer.com,AdBlock
+  - DOMAIN-SUFFIX,launches.appsflyer.com,AdBlock
+  - DOMAIN-SUFFIX,skadnetwork.appsflyer.com,AdBlock
+
+  # --- Luật cuối cùng: Cho phép toàn bộ traffic còn lại ---
+  # MATCH phải là rule cuối cùng, bắt buộc trong Stash
+  - MATCH,DIRECT
